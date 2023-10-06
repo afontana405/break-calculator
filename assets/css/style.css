@@ -1,0 +1,18 @@
+
+#currentTime {
+    font-weight: 500;
+    font-size: 200%;
+    background-color: purple;
+}
+
+#endBreak {
+    font-weight: 800;
+    font-size: 300%;
+    background-color: red;
+}
+
+#suggestedEnd {
+    font-weight: 600;
+    font-size: 250%;
+    background-color: yellow;
+}
