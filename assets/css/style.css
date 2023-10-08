@@ -5,7 +5,15 @@
     background-color: purple;
 }
 
+.navbar {
+    height: 100px;
+    background-color: lightgray;
+}
+
 #endBreak {
+    display: flex;
+    align-items: center;
+    height: 150px;
     font-weight: 800;
     font-size: 300%;
     background-color: red;

@@ -1,15 +1,25 @@
-var Time = dayjs().format('hh:mm')
+var Time = dayjs().format('hh:mm');
+const presentTime = dayjs();
 var currentTime = $('#currentTime');
 var endBreak = $('#endBreak');
 var suggestedEnd = $('#suggestedEnd');
-
-console.log(Time);
+const newTime = presentTime.add(15, 'minute');
+const endBreakHour = newTime.format('hh');
+const endBreakMinutes = newTime.format('mm');
 
 $(function() {
     currentTime.text('It is currently ' + Time);
 });
 
 $(function() {
-    var plus15 = Time.add(15, 'm')
-    endBreak.text('Come back from break at ' + plus15);
+    endBreak.text('Come back from break at ' + endBreakHour + ':' + endBreakMinutes);
 });
+
+
+
+
+// const currentDate = new Date();
+// const currentHour = currentDate.getHours();
+// const currentMinutes = currentDate.getMinutes();
+// const plus15 = currentMinutes.add(15, 'minute');
+// console.log(`Current time: ${currentHour}:${plus15}`);
