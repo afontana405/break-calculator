@@ -1,14 +1,22 @@
+body {
+    background-color: lightgray;
+}
+
+#breakTime {
+    position: relative;
+    top: 150px;
+    /* border-style: solid;
+    border-width: 10px; */
+}
 
 #currentTime {
     font-weight: 500;
     font-size: 200%;
     background-color: purple;
+    border-style: solid;
+    border-width: 10px;
 }
 
-.navbar {
-    height: 100px;
-    background-color: lightgray;
-}
 
 #endBreak {
     display: flex;
@@ -17,10 +25,15 @@
     font-weight: 800;
     font-size: 300%;
     background-color: red;
+    border-left-style: solid;
+    border-right-style: solid;
+    border-width: 10px;
 }
 
 #suggestedEnd {
     font-weight: 600;
     font-size: 250%;
     background-color: yellow;
+    border-style: solid;
+    border-width: 10px;
 }
