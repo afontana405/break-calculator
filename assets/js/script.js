@@ -12,7 +12,6 @@ $(document).ready(function() {
         endBreakEl.text('Come back from break at ' + newTime.format('h:mm A'));
         checkEndBreak();
     });
-
     // checks end break time and rounds it up to the nearest 5 minute
     function checkEndBreak() {
         if (newTime.format('mm') % 5 === 0) {
@@ -24,10 +23,4 @@ $(document).ready(function() {
             checkEndBreak();
         };
     };
-
-    $.each( $('*'), function() { 
-        if( $(this).width() > $('body').width()) {
-            console.log("Wide Element: ", $(this), "Width: ", $(this).width()); 
-        } 
-    });
 });
