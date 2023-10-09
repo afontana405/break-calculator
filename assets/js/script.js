@@ -13,7 +13,9 @@ $(document).ready(function() {
         // if newtime is not divisible by 5, calls the roundEndBreak function
         if (newTime.format('mm') % 5 !== 0) {
             roundEndBreak();
-            suggestedEndEl.style.border = 'none';
+        } else {
+            suggestedEndEl.css('display', 'none');
+            endBreakEl.css('border-bottom', '10px solid');
         };
     });
     // checks end break time and rounds it up to the nearest 5 minute
