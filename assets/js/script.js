@@ -1,25 +1,28 @@
 var Time = dayjs().format('hh:mm');
-const presentTime = dayjs();
-var currentTime = $('#currentTime');
-var endBreak = $('#endBreak');
-var suggestedEnd = $('#suggestedEnd');
-const newTime = presentTime.add(15, 'minute');
-const endBreakHour = newTime.format('hh');
-const endBreakMinutes = newTime.format('mm');
+var presentTime = dayjs();
+var currentTimeEl = $('#currentTime');
+var endBreakEl = $('#endBreak');
+var suggestedEndEl = $('#suggestedEnd');
+var newTime = presentTime.add(15, 'minute');
+var endBreakHour = newTime.format('hh');
+var endBreakMinutes = newTime.format('mm');
 
 $(function() {
-    currentTime.text('It is currently ' + Time);
+    // displays current time
+    currentTimeEl.text('It is currently ' + Time);
+    // displays end break time
+    endBreakEl.text('Come back from break at ' + endBreakHour + ':' + endBreakMinutes);
+    checkEndBreak();
 });
 
-$(function() {
-    endBreak.text('Come back from break at ' + endBreakHour + ':' + endBreakMinutes);
-});
-
-
-
-
-// const currentDate = new Date();
-// const currentHour = currentDate.getHours();
-// const currentMinutes = currentDate.getMinutes();
-// const plus15 = currentMinutes.add(15, 'minute');
-// console.log(`Current time: ${currentHour}:${plus15}`);
+// suggests an alternative break time and displays it
+function checkEndBreak() {
+    if (endBreakMinutes % 5 == 0) {
+        suggestedEndEl.text('Or we could round up and call it ' + endBreakHour + ':' + endBreakMinutes);
+    } else {
+        var endBreakMinutes = endBreakMinutes.add(1, 'minute');
+        console.log(endBreakMinutes);
+        checkEndBreak();
+    };
+    return;
+};
