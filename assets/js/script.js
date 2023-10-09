@@ -10,17 +10,21 @@ $(document).ready(function() {
         currentTimeEl.text('It is currently ' + presentTime.format('h:mm A'));
         // displays end break time
         endBreakEl.text('Come back from break at ' + newTime.format('h:mm A'));
-        checkEndBreak();
+        // if newtime is not divisible by 5, calls the roundEndBreak function
+        if (newTime.format('mm') % 5 !== 0) {
+            roundEndBreak();
+            suggestedEndEl.style.border = 'none';
+        };
     });
     // checks end break time and rounds it up to the nearest 5 minute
-    function checkEndBreak() {
+    function roundEndBreak() {
         if (newTime.format('mm') % 5 === 0) {
             // displays rounded time
             suggestedEndEl.text('Or we could round up and call it '+ newTime.format('h:mm A'));
         } else {
             // if time is not divisible by 5, adds 1 until it is
             newTime = newTime.add(1, 'minute');
-            checkEndBreak();
+            roundEndBreak();
         };
     };
 });
